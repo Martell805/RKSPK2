@@ -8,8 +8,11 @@ public class Main {
     public static void time(final Min method, final List<Integer> array) {
         System.out.println(method.getName() + ":");
         long startTime = System.currentTimeMillis();
+        long startMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         System.out.println("Минимум: " + method.findMin(array));
         System.out.println("Время работы: " + (System.currentTimeMillis() - startTime) / 1000.0 + " с");
+        long endMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+        System.out.println("Использованная память: " + (endMemory - startMemory));
     }
 
     public static void main(String[] args) {
