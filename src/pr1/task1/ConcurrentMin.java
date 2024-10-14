@@ -12,7 +12,7 @@ public class ConcurrentMin implements Min {
     }
 
     public Integer findMin(final List<Integer> array) {
-        try (final ExecutorService executor = Executors.newFixedThreadPool(4)) {
+        try (final ExecutorService executor = Executors.newFixedThreadPool(CHUNK_AMOUNT)) {
             int chunkSize = array.size() / CHUNK_AMOUNT;
             final List<Future<Integer>> futures = new ArrayList<>();
 
