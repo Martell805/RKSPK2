@@ -83,6 +83,12 @@ public class FileProcessingSystem {
             }).start();
         }
 
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         System.exit(0);
     }
 }
