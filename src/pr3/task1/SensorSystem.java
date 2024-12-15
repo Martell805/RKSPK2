@@ -38,5 +38,13 @@ public class SensorSystem {
                         }
                 )
                 .subscribe(alarmMessage -> System.out.println("Сигнализация: " + alarmMessage));
+
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            alarmSystem.dispose();
+        }
     }
 }
